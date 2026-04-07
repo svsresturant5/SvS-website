@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SvS | Fine Dining Belgium</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#c5a059;--dark-bg:#05070a;--card-bg:rgba(255,255,255,0.03);--card-border:rgba(197,160,89,0.2);--text-light:#f0f0f0}
+body{font-family:'Playfair Display',serif;margin:0;padding:0;color:var(--text-light);background:radial-gradient(circle at 50% 0,#151a28 0,var(--dark-bg) 100%);background-attachment:fixed;scroll-behavior:smooth;font-size:18px;font-weight:500}
+header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(rgba(5,7,10,0.8),rgba(5,7,10,0.95)),url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-attachment:fixed;border-bottom:1px solid var(--gold);text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+.main-logo{width:280px;filter:drop-shadow(0 0 25px rgba(197,160,89,0.5));margin-bottom:10px}
+.coming-soon{font-family:'Cinzel',serif;font-size:3rem;color:#fff;font-weight:700;letter-spacing:12px;margin-top:30px;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:15px 0;text-transform:uppercase;text-shadow:0 0 15px rgba(197,160,89,0.5)}
+.hero-buttons{margin-top:40px;display:flex;gap:20px}
+.btn-outline,.btn-solid{font-family:'Cinzel',serif;padding:18px 35px;letter-spacing:2px;text-decoration:none;font-weight:800;font-size:1.1rem;transition:all 0.3s ease;border-radius:4px}
+.btn-outline{border:2px solid var(--gold);color:var(--gold);background:transparent}
+.btn-outline:hover{background:rgba(197,160,89,0.15);color:#fff}
+.btn-solid{background:var(--gold);color:#000;border:2px solid var(--gold)}
+.btn-solid:hover{background:#d4b475;transform:scale(1.05)}
+nav{display:flex;justify-content:center;align-items:center;background:rgba(5,7,10,0.98);padding:20px;position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--card-border);backdrop-filter:blur(10px)}
+nav a{font-family:'Cinzel',serif;color:var(--gold);margin:0 15px;text-decoration:none;font-weight:700;letter-spacing:2px;font-size:1.05rem;transition:color 0.3s}
+nav a:hover{color:#fff;text-shadow:0 0 10px var(--gold)}
+.nav-cta{background:var(--gold);color:#000!important;font-weight:800;padding:12px 24px;border-radius:2px;margin-left:30px}
+.nav-cta:hover{background:#d4b475;text-shadow:none}
+.container{padding:100px 20px;max-width:1200px;margin:auto}
+.section-title{font-family:'Cinzel',serif;text-align:center;font-weight:800;font-size:3.5rem;margin-bottom:10px;color:#fff;letter-spacing:8px}
+.subtitle{text-align:center;color:var(--gold);font-family:'Cinzel';font-weight:700;font-size:1.2rem;letter-spacing:4px;margin-bottom:60px}
+.story-text{text-align:center;max-width:850px;margin:0 auto 60px auto;line-height:1.9;font-size:1.35rem;color:#fff;font-weight:500}
+.story-text span{color:var(--gold);font-weight:700;font-size:1.5rem}
+.vibe-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:100px}
+.vibe-gallery img{width:100%;height:280px;object-fit:cover;border-radius:4px;border:1px solid var(--card-border);transition:transform 0.3s}
+.vibe-gallery img:hover{transform:scale(1.03);border-color:var(--gold);z-index:10;position:relative}
+.featured-dish{background:linear-gradient(135deg,rgba(197,160,89,0.1),rgba(0,0,0,0.6));border:1px solid var(--gold);padding:60px 40px;text-align:center;margin-bottom:80px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,0.5);position:relative;overflow:hidden}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:100px}
+.menu-category h3{font-family:'Cinzel';color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:10px;margin-bottom:30px;text-align:center;font-size:1.8rem;font-weight:700}
+.menu-item{margin-bottom:45px}
+.item-header{display:flex;justify-content:space-between;align-items:baseline}
+.item-name{font-size:1.5rem;font-weight:700;color:#fff}
+.item-dots{flex-grow:1;border-bottom:2px dotted #555;margin:0 15px}
+.item-price{font-family:'Cinzel';color:var(--gold);font-weight:800;font-size:1.5rem}
+.item-desc{font-style:italic;color:#d0d0d0;font-size:1.15rem;font-weight:500;margin-top:10px;line-height:1.6}
+.special-tag{color:#000;background:var(--gold);font-size:0.8rem;padding:4px 10px;font-family:'Cinzel';font-weight:800;vertical-align:middle;margin-left:10px;border-radius:2px}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:80px}
+.loc-card{background:var(--card-bg);padding:50px;border:1px solid var(--card-border);text-align:center;transition:all 0.4s ease;backdrop-filter:blur(5px);border-radius:8px}
+.loc-card h3{font-size:1.8rem;font-weight:800}
+.loc-card p{font-size:1.2rem;color:#e0e0e0;font-weight:600}
+.loc-card:hover{border-color:var(--gold);transform:translateY(-5px);background:rgba(197,160,89,0.08)}
+.res-box{background:var(--card-bg);padding:60px;border:1px solid var(--card-border);border-radius:8px;backdrop-filter:blur(5px)}
+input,select,textarea{width:100%;padding:18px;margin:15px 0;background:rgba(0,0,0,0.7);border:1px solid #555;color:#fff;font-family:'Playfair Display';font-size:1.1rem;font-weight:600;border-radius:4px;box-sizing:border-box;transition:border 0.3s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+.gold-button{background:var(--gold);color:#000;padding:22px;border:none;width:100%;font-family:'Cinzel';font-weight:800;font-size:1.2rem;cursor:pointer;letter-spacing:4px;border-radius:4px;transition:background 0.3s,transform 0.2s}
+.gold-button:hover{background:#d4b475;transform:scale(1.02)}
+.review-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;margin-bottom:100px}
+.review-card{background:var(--card-bg);padding:40px 30px;border:1px solid var(--card-border);border-radius:8px;text-align:center;position:relative;transition:transform 0.3s}
+.review-card:hover{transform:translateY(-5px)}
+.review-card::before{content:"“";font-family:serif;font-size:6rem;color:var(--gold);opacity:0.2;position:absolute;top:-30px;left:20px;line-height:1}
+.review-text{font-style:italic;font-weight:600;font-size:1.15rem;color:#e0e0e0;line-height:1.7;margin-bottom:20px;position:relative;z-index:2}
+.review-author{font-family:'Cinzel';color:var(--gold);font-weight:800;font-size:1rem;letter-spacing:1.5px}
+.contact-box{text-align:center;padding:60px;border-radius:8px;background:linear-gradient(135deg,rgba(197,160,89,0.08),rgba(0,0,0,0.7));border:1px solid var(--card-border)}
+.landline{font-family:'Cinzel';font-size:4rem;font-weight:800;color:var(--gold);margin:20px 0;letter-spacing:5px;text-shadow:0 0 15px rgba(197,160,89,0.3)}
+footer{background:#030406;border-top:2px solid var(--card-border);padding:70px 20px 30px 20px;font-size:1.1rem;color:#aaa}
+.footer-grid{max-width:1200px;margin:0 auto 50px auto;display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:40px}
+.footer-col h4{font-family:'Cinzel';color:var(--gold);font-weight:800;font-size:1.3rem;letter-spacing:2px;margin-bottom:20px;border-bottom:1px solid #333;padding-bottom:10px}
+.footer-col p{line-height:1.8;margin-bottom:10px;font-weight:500}
+.footer-socials a{color:var(--gold);text-decoration:none;margin-right:15px;font-weight:700;font-family:'Cinzel';letter-spacing:1.5px}
+.footer-socials a:hover{color:#fff}
+.footer-bottom{text-align:center;border-top:1px solid #222;padding-top:30px;font-weight:600}
+@media (max-width:900px){
+.menu-grid,.location-grid,.review-grid,.vibe-gallery,.footer-grid{grid-template-columns:1fr}
+.section-title{font-size:2.5rem}
+.coming-soon{font-size:2rem;letter-spacing:6px}
+.landline{font-size:2.8rem}
+nav{flex-wrap:wrap}
+.nav-cta{margin-left:0;margin-top:10px;width:100%;text-align:center}
+.hero-buttons{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header>
+<svg class="main-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="95" fill="none" stroke="#c5a059" stroke-width="3"/><circle cx="100" cy="100" r="85" fill="none" stroke="#c5a059" stroke-width="1"/><path d="M 100 10 L 100 25 M 100 175 L 100 190 M 10 100 L 25 100 M 175 100 L 190 100" stroke="#c5a059" stroke-width="2"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Cinzel, serif" font-weight="800"><tspan font-size="65" fill="#c5a059">S</tspan><tspan font-size="45" font-family="Playfair Display, serif" font-style="italic" fill="#ffffff" dy="-5">v</tspan><tspan font-size="65" fill="#c5a059" dy="5">S</tspan></text></svg>
+
+<div style="font-family:'Cinzel', serif; letter-spacing: 8px; color: #fff; font-size: 2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Restaurant</div>
+
+<div style="font-family:'Cinzel';letter-spacing:5px;color:var(--gold);font-size:1.4rem;font-weight:700">Est. 2026</div>
+<div style="font-family:'Playfair Display';font-style:italic;font-size:1.2rem;font-weight:600;color:#ccc;margin-top:8px;letter-spacing:1px">Meticulously planned & conceptualized since 2023</div>
+<div class="coming-soon">Coming Soon</div>
+<div class="hero-buttons"><a href="#menu" class="btn-outline">VIEW MENU</a> <a href="#reservations" class="btn-solid">RESERVE NOW</a></div>
+</header>
+<nav><a href="#origins">OUR STORY</a> <a href="#menu">THE MENU</a> <a href="#locations">LOCATIONS</a> <a href="#reservations" class="nav-cta">BOOK A TABLE</a></nav>
+<div class="container">
+<section id="origins"><h2 class="section-title">BORN IN BRUSSELS</h2><p class="subtitle">A Heritage of Epicurean Excellence</p><p class="story-text">Our journey began in the vibrant, cobblestone streets near the Grand Place of Brussels. What started as an intimate gathering of culinary minds has blossomed into <span>SvS</span>—a sanctuary for fine dining. We are deeply rooted in Belgian tradition, sourcing the finest local ingredients from the lush Ardennes forests to the historic Trappist abbeys. Our mission is to honor our European heritage while pushing the boundaries of modern gastronomy.</p><div class="vibe-gallery"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Restaurant Interior"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Plated Dish"><img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=800&q=80" alt="Chef Preparing Food"></div></section>
+<section id="menu"><h2 class="section-title">CHEF'S SELECTIONS</h2><p class="subtitle">A Celebration of Authentic Belgian Culinary Tradition</p><div class="featured-dish"><p style="font-family:'Cinzel';color:#fff;letter-spacing:5px;margin-bottom:5px;font-size:1.1rem;font-weight:700">OUR NON-VEGETARIAN MASTERPIECE</p><h4 style="font-size:2.8rem;font-weight:800;color:var(--gold);margin:15px 0">The Royal Ardennes Venison</h4><p style="color:#fff;font-style:italic;max-width:800px;margin:0 auto 20px auto;font-size:1.35rem;font-weight:500;line-height:1.7">Our crown jewel. Wild-caught Ardennes venison, dry-aged in-house for 21 days to ensure peak tenderness. It is pan-seared to a perfect medium-rare and draped in a luscious, slow-simmered reduction of Westvleteren 12—the world's most exclusive Trappist ale.</p><span class="item-price" style="font-size:2.2rem">€65</span></div><div class="menu-grid"><div class="menu-category"><h3>VEGETARIAN (VEG)</h3><div class="menu-item"><div class="item-header"><span class="item-name">Truffle Paneer Tikka <span class="special-tag">FUSION</span></span><div class="item-dots"></div><span class="item-price">€32</span></div><p class="item-desc">Premium paneer marinated in saffron and white truffle oil, roasted to smoky perfection.</p></div><div class="menu-item"><div class="item-header"><span class="item-name">Wild Forest Risotto <span class="special-tag">GF</span></span><div class="item-dots"></div><span class="item-price">€28</span></div><p class="item-desc">Rich Arborio rice infused with Ardennes foraged wild mushrooms and 24-month aged parmesan.</p></div></div><div class="menu-category"><h3>NON-VEGETARIAN (NON-VEG)</h3><div class="menu-item"><div class="item-header"><span class="item-name">Abbey Ale Glazed Salmon <span class="special-tag">SIGNATURE</span></span><div class="item-dots"></div><span class="item-price">€45</span></div><p class="item-desc">Atlantic Salmon brushed with a dark Trappist ale reduction, accompanied by beef-tallow frites.</p></div><div class="menu-item"><div class="item-header"><span class="item-name">Flemish Braised Lamb</span><div class="item-dots"></div><span class="item-price">€48</span></div><p class="item-desc">Melt-in-your-mouth lamb leg, slow-simmered for 12 hours in authentic Belgian Dubbel ale.</p></div></div></div></section>
+<section id="locations"><h2 class="section-title">OUR RESIDENCES</h2><div class="location-grid"><div class="loc-card"><h3 style="font-family:'Cinzel';color:var(--gold);letter-spacing:2px">BRUSSELS, BE</h3><p style="line-height:1.8;margin-top:20px">Grand Place Region<br>Rue des Bouchers 22<br>1000 Brussels, Belgium</p></div><div class="loc-card"><h3 style="font-family:'Cinzel';color:var(--gold);letter-spacing:2px">ANTWERP, BE</h3><p style="line-height:1.8;margin-top:20px">Diamond District<br>Pelikaanstraat 12<br>2018 Antwerp, Belgium</p></div></div></section>
+<section id="reservations"><h2 class="section-title">RESERVATIONS</h2><p class="subtitle" style="margin-bottom:40px">Secure Your Table at SvS</p><div class="res-box"><form><div style="display:grid;grid-template-columns:1fr 1fr;gap:20px"><input type="text" placeholder="FULL NAME"> <input type="email" placeholder="EMAIL ADDRESS"></div><select><option>SELECT LOCATION</option><option>BRUSSELS, BE</option><option>ANTWERP, BE</option></select><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px"><input type="date" style="color:#ccc"> <input type="time" style="color:#ccc"> <select><option>2 GUESTS</option><option>3 GUESTS</option><option>4 GUESTS</option><option>5+ GUESTS</option></select></div><textarea rows="3" placeholder="SPECIAL REQUESTS (DIETARY RESTRICTIONS, ANNIVERSARIES, ETC.)"></textarea> <button type="button" class="gold-button">REQUEST A TABLE</button></form></div></section>
+<section id="reviews" style="margin-top:120px"><h2 class="section-title">GUEST EXPERIENCES</h2><p class="subtitle">What the Critics and Connoisseurs Are Saying</p><div class="review-grid"><div class="review-card"><p class="review-text">"An absolute revelation. The Royal Ardennes Venison transports you straight to the heart of the Belgian forests."</p><p class="review-author">- THE BRUSSELS CULINARY TIMES</p></div><div class="review-card"><p class="review-text">"The truffle paneer is a daring fusion that works phenomenally well. A truly multi-sensory journey."</p><p class="review-author">- EUROPEAN GASTRONOMY GUIDE</p></div><div class="review-card"><p class="review-text">"The dedication to authentic Trappist ale reductions and local sourcing is simply unmatched."</p><p class="review-author">- M. VANDEVELDE, ANTWERP</p></div></div></section>
+</div>
+<footer><div class="footer-grid"><div class="footer-col"><h4>HOURS OF OPERATION</h4><p><strong style="color:#fff">Tuesday - Thursday:</strong><br>5:00 PM - 11:00 PM</p><p><strong style="color:#fff">Friday - Saturday:</strong><br>4:00 PM - 12:00 AM</p><p><strong style="color:#fff">Sunday:</strong><br>4:00 PM - 10:00 PM</p><p style="color:var(--gold);font-style:italic">Kitchen closes 45 minutes prior to closing.</p></div><div class="footer-col" style="text-align:center"><svg style="width:80px;margin-bottom:20px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="95" fill="none" stroke="#c5a059" stroke-width="3"/><circle cx="100" cy="100" r="85" fill="none" stroke="#c5a059" stroke-width="1"/><path d="M 100 10 L 100 25 M 100 175 L 100 190 M 10 100 L 25 100 M 175 100 L 190 100" stroke="#c5a059" stroke-width="2"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Cinzel, serif" font-weight="800"><tspan font-size="65" fill="#c5a059">S</tspan><tspan font-size="45" font-family="Playfair Display, serif" font-style="italic" fill="#ffffff" dy="-5">v</tspan><tspan font-size="65" fill="#c5a059" dy="5">S</tspan></text></svg><p style="color:var(--gold);font-family:'Cinzel';font-weight:800;font-size:1.3rem;letter-spacing:5px">SvS BELGIUM</p><p style="color:#ddd">For VIP events and large parties,<br>please contact our events team.</p><div class="footer-socials" style="margin-top:20px"><a href="#">INSTAGRAM</a> | <a href="#">FACEBOOK</a> | <a href="#">TIKTOK</a></div></div><div class="footer-col" style="text-align:right"><h4>CONTACT & MAP</h4><p style="color:#ddd">+32 2 555 0199<br>reservations@svsbelgium.be</p><p style="margin-top:20px;color:#ddd"><strong style="color:#fff">Flagship Address:</strong><br>Rue des Bouchers 22<br>1000 Brussels, Belgium</p><a href="#" style="color:var(--gold);text-decoration:underline;font-style:italic">Open in Google Maps</a></div></div><div class="footer-bottom"><p style="font-size:0.95rem;letter-spacing:2px">&copy; 2026 SvS FINE DINING. ALL RIGHTS RESERVED.</p></div></footer>
+</body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </html>
+
+  
